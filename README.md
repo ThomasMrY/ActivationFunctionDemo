@@ -15,7 +15,6 @@ And the evaluating datasets:
 - ImageNet
 
 # Requirements
---------------
 For implementation
 
 * Windows
@@ -24,18 +23,16 @@ For training and test
 
 * Linux
 * Windows
-
 # Install
 - pytorch (>=0.4.0) and torchvision from [official website](http://pytorch.org/), for example, cuda8.0 for python3.5
     - `pip install http://download.pytorch.org/whl/cu80/torch-0.4.0-cp35-cp35m-linux_x86_64.whl`
     - `pip install torchvision`
-- tqdm
-    - `pip install tqdm`
-
-
+- numpy
+    - `pip install numpy`
+- pywinauto
+    - `pip install pywinauto`
 # Usage
 The Arguements
-
 
     usage: main.py [-h] [-plot_AF PLOT_AF] [-generate_verilog GENERATE_VERILOG]
                [-generate_coe_file GENERATE_COE_FILE] [-simulate SIMULATE]
@@ -70,7 +67,6 @@ The Arguements
                         Retrain IMGNET with the AF or not
 		-Test_on_Datasets TEST_ON_DATASETS
                         Test the implemented AF on MNIST,CIFAR,IMGNET or not
-    ```
 # Examples:
 ## Implemetation
 The default mode will implement the activation function of a specific range with different precisions and gernarate a verilog file of our mathod and coe files for the mathod we compared in the paper.
@@ -91,11 +87,9 @@ Implement selu in [-3.875,0], output: 1 bit for integer part, 6 bits for the dec
 To evaluation the activation function we implement we gernerate a activation function in pytorch to simulate the effect on the neural network.
 Before start we need to download the parameters we trained:
 
-MNIST:
-
-CIFAR10:
-
-ImageNet:
+* MNIST:
+* CIFAR10:
+* ImageNet:
 
 Evaluate the tanh we implement above:
 

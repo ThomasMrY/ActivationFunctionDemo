@@ -45,3 +45,11 @@ import time
 os.system("python main.py tanh 0 2 1 4 4 -MNIST_retrain=True")
 
 os.system("python main.py selu -3.875 0 1 4 4 -MNIST_retrain=True")
+
+os.system("python main.py tanh 0 2 1 4 4 -CIFAR_retrain=True")
+
+os.system("python main.py selu -3.875 0 1 4 4 -CIFAR_retrain=True")
+
+os.system("python main.py tanh 0 2 1 4 4 -IMGNET_retrain=True")
+
+os.system("python main.py selu -3.875 0 1 4 4 -IMGNET_retrain=True")
