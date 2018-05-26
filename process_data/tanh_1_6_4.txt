@@ -1,0 +1,7 @@
+the 0 line is all 0
+BD+BC+A
+B'CD+BC'D'+A
+A'CD'+BD'+BC+ACD+AB
+A'B'D+A'BC'D'+B'CD'+BCD+ACD'
+C'D+B'CD'+A'B'D
+C'D+A'B'CD'+BC'+BD
