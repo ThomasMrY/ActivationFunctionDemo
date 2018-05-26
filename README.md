@@ -1,10 +1,6 @@
-<<<<<<< 10ddd98bf005331cd6e2558c83d70dd17803a412
-# Activation-Function-Implementation
-The Demo for the paper : 
-=======
-# Activation Function Application
+# Activation Function Demo
 
-The "Activation Function Application" is a application for implement activation function in the mathod propsed in paper: and eveluat the performance  of it on diffierent datasets.
+The "Activation Function Demo" is a application for implement activation function in the mathod propsed in paper:[A](http://pytorch.org/), and eveluat the performance  of it on diffierent datasets.
 
 Untill now the activation function we support as exmaples:
 
@@ -114,32 +110,150 @@ Here we take evaluating the tanh_apx on the ImageNet as an exmaple:
 We evaluate the performance of popular dataset and models with tanh and selu of different input/output precision.
 
 The origin accuracy:
-|Datasets    |tanh  |selu  |
-|:-----------|:----:|-----:|
-|MNIST       |98.42 |98.43 |
-|CIFAR10     |93.78 |93.79 |
-|IMGNET(top1)|45.11 |41.2  |
-|IMGNET(top5)|67.68 |67.32 |
+<table>
+   <tr>
+      <td>Datasets</td>
+      <td>tanh</td>
+      <td>selu</td>
+   </tr>
+   <tr>
+      <td>MNIST</td>
+      <td>98.42</td>
+      <td>98.42</td>
+   </tr>
+   <tr>
+      <td>CIFAR10</td>
+      <td>93.78</td>
+      <td>93.78</td>
+   </tr>
+   <tr>
+      <td>ImageNet(top1)</td>
+      <td>93.78</td>
+      <td>93.78</td>
+   </tr>
+   <tr>
+      <td>ImageNet(top5)</td>
+      <td>93.78</td>
+      <td>93.78</td>
+   </tr>
+</table>
 
-|AF|  |MNIST  |CIFAR10 |ImageNet  |
-|:----|:--------:|:------:|:-----:|
-|tanh_1_4_4|98.42|98.43|98.44/95.46|
-|tanh_1_4_5|96.03|96.03|96.04/96.02|
-|tanh_1_4_6|93.78|93.79|93.80/93.58|
-|tanh_1_6_4|74.27|74.21|74.19/73.70|
-|tanh_1_6_5|77.59|77.65|77.70/77.59|
-|tanh_1_6_6|55.70/78.42|55.66/78.41|
-|tanh_1_8_4|74.27|74.21|74.19/73.70|
-|tanh_1_8_5|77.59|77.65|77.70/77.59|
-|tanh_1_8_6|55.70/78.42|55.66/78.41|
-|selu_1_4_4|98.42|98.43|98.44/95.46|
-|selu_1_4_5|96.03|96.03|96.04/96.02|
-|selu_1_4_6|93.78|93.79|93.80/93.58|
-|selu_1_6_4|74.27|74.21|74.19/73.70|
-|selu_1_6_5|77.59|77.65|77.70/77.59|
-|selu_1_6_6|55.70/78.42|55.66/78.41|
-|selu_1_8_4|74.27|74.21|74.19/73.70|
-|selu_1_8_5|77.59|77.65|77.70/77.59|
-|selu_1_8_6|55.70/78.42|55.66/78.41|
 
->>>>>>> first commit
+After using the approximate AF:
+<table>
+   <tr>
+      <td>AF</td>
+      <td>MNIST</td>
+      <td>CIFAR10</td>
+      <td>ImageNet</td>
+   </tr>
+   <tr>
+      <td>tanh_1_4_4</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.42</td>
+   </tr>
+   <tr>
+      <td>tanh_1_4_5</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.43</td>
+   </tr>
+   <tr>
+      <td>tanh_1_4_6</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.44</td>
+   </tr>
+   <tr>
+      <td>tanh_1_6_4</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.45</td>
+   </tr>
+   <tr>
+      <td>tanh_1_6_5</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.46</td>
+   </tr>
+   <tr>
+      <td>tanh_1_6_6</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.47</td>
+   </tr>
+   <tr>
+      <td>tanh_1_8_4</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.48</td>
+   </tr>
+   <tr>
+      <td>tanh_1_8_5</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.49</td>
+   </tr>
+   <tr>
+      <td>tanh_1_8_6</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.50</td>
+   </tr>
+   <tr>
+      <td>selu_1_4_4</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.42</td>
+   </tr>
+   <tr>
+      <td>selu_1_4_5</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.43</td>
+   </tr>
+   <tr>
+      <td>selu_1_4_6</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.44</td>
+   </tr>
+   <tr>
+      <td>selu_1_6_4</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.45</td>
+   </tr>
+   <tr>
+      <td>selu_1_6_5</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.46</td>
+   </tr>
+   <tr>
+      <td>selu_1_6_6</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.47</td>
+   </tr>
+   <tr>
+      <td>selu_1_8_4</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.48</td>
+   </tr>
+   <tr>
+      <td>selu_1_8_5</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.49</td>
+   </tr>
+   <tr>
+      <td>selu_1_8_6</td>
+      <td>98.42</td>
+      <td>98.42</td>
+      <td>98.42/98.50</td>
+   </tr>
+</table>
+
