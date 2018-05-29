@@ -282,15 +282,15 @@ def IMGNET_retrain(args):
     if (args.AF == 'self_define'):
         I_self_define.train_test(True,file_name)
 def test_on_datates(args):
-    file_name = args.AF + '_' + str(int_bits) + '_' + str(float_bits) + '_' + str(i_bits)
+    file_name = args.AF + '_' + str(args.int_bits) + '_' + str(args.float_bits) + '_' + str(args.i_bits)
     if (args.AF == 'tanh'):
         M_tanh.train_test(False,file_name)
-        # C_tanh.train_test(False,file_name)
-        # I_tanh.train_test(False,file_name)
+        C_tanh.train_test(False,file_name)
+        I_tanh.train_test(False,file_name)
     if (args.AF == 'selu'):
         M_selu.train_test(False,file_name)
-        # C_selu.train_test(False,file_name)
-        # I_selu.train_test(False,file_name)
+        C_selu.train_test(False,file_name)
+        I_selu.train_test(False,file_name)
     if (args.AF == 'self_define'):
         M_self_define.train_test(False,file_name)
         C_self_define.train_test(False,file_name)

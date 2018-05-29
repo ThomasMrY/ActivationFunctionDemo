@@ -52,5 +52,3 @@ class AlexNet(nn.Module):
         x = x.view(x.size(0), 256 * 6 * 6)
         x = self.classifier(x)
         return x
-
-models.vgg11_bn()

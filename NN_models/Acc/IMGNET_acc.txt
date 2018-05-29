@@ -2,21 +2,9 @@ tanh_1_4_4
  * Prec@1 42.392 Prec@5 67.614 	
  * Prec@1 8.038 Prec@5 23.662 	
 
-tanh_1_6_5 	
- * Prec@1 42.392 Prec@5 67.614 	
- * Prec@1 6.562 Prec@5 20.432 	
-
 tanh_1_4_5 	
  * Prec@1 42.392 Prec@5 67.614 	
  * Prec@1 7.668 Prec@5 22.882 	
-
-tanh_1_6_6 	
- * Prec@1 42.392 Prec@5 67.614 	
- * Prec@1 6.296 Prec@5 19.960 	
-
-tanh_1_8_4 	
- * Prec@1 42.392 Prec@5 67.614 	
- * Prec@1 6.712 Prec@5 20.792 	
 
 tanh_1_4_6 	
  * Prec@1 42.392 Prec@5 67.614 	
@@ -26,21 +14,9 @@ tanh_1_6_4
  * Prec@1 42.392 Prec@5 67.614 	
  * Prec@1 6.882 Prec@5 21.330 	
 
-tanh_1_8_5 	
- * Prec@1 42.392 Prec@5 67.614 	
- * Prec@1 6.278 Prec@5 19.778 	
-
 tanh_1_6_5 	
  * Prec@1 42.392 Prec@5 67.614 	
  * Prec@1 6.562 Prec@5 20.432 	
-
-tanh_1_8_6 	
- * Prec@1 42.392 Prec@5 67.614 	
- * Prec@1 5.940 Prec@5 19.128 	
-
-selu_1_4_4 	
- * Prec@1 38.668 Prec@5 62.760 	
- * Prec@1 0.524 Prec@5 1.538 	
 
 tanh_1_6_6 	
  * Prec@1 42.392 Prec@5 67.614 	
@@ -50,31 +26,46 @@ tanh_1_8_4
  * Prec@1 42.392 Prec@5 67.614 	
  * Prec@1 6.712 Prec@5 20.792 	
 
-selu_1_4_5 	
- * Prec@1 39.096 Prec@5 62.698 	
- * Prec@1 0.484 Prec@5 1.508 	
-
 tanh_1_8_5 	
  * Prec@1 42.392 Prec@5 67.614 	
  * Prec@1 6.278 Prec@5 19.778 	
-
-selu_1_4_6 	
- * Prec@1 38.648 Prec@5 62.528 	
- * Prec@1 0.448 Prec@5 1.414 	
-
-selu_1_6_4 	
- * Prec@1 38.608 Prec@5 62.706 	
- * Prec@1 0.394 Prec@5 1.084 	
 
 tanh_1_8_6 	
  * Prec@1 42.392 Prec@5 67.614 	
  * Prec@1 5.940 Prec@5 19.128 	
 
+selu_1_4_4 	
+ * Prec@1 39.260 Prec@5 63.342 	
+ * Prec@1 0.242 Prec@5 0.882 	
+
+selu_1_4_5 	
+ * Prec@1 39.260 Prec@5 63.342 	
+ * Prec@1 0.284 Prec@5 0.916 	
+
+selu_1_4_6 	
+ * Prec@1 39.260 Prec@5 63.342 	
+ * Prec@1 0.302 Prec@5 0.944 	
+
+selu_1_6_4 	
+ * Prec@1 39.260 Prec@5 63.342 	
+ * Prec@1 0.242 Prec@5 0.878 	
+
 selu_1_6_5 	
- * Prec@1 39.390 Prec@5 63.612 	
- * Prec@1 0.382 Prec@5 1.194 	
+ * Prec@1 39.260 Prec@5 63.342 	
+ * Prec@1 0.284 Prec@5 0.870 	
 
 selu_1_6_6 	
- * Prec@1 39.390 Prec@5 63.612 	
- * Prec@1 0.392 Prec@5 1.178 	
+ * Prec@1 39.260 Prec@5 63.342 	
+ * Prec@1 0.308 Prec@5 0.892 	
 
+selu_1_8_4 	
+ * Prec@1 39.260 Prec@5 63.342 	
+ * Prec@1 0.250 Prec@5 0.878 	
+
+selu_1_8_5 	
+ * Prec@1 39.260 Prec@5 63.342 	
+ * Prec@1 0.296 Prec@5 0.900 	
+
+selu_1_8_6 	
+ * Prec@1 39.260 Prec@5 63.342 	
+ * Prec@1 0.328 Prec@5 0.844 	

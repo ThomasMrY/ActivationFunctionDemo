@@ -84,7 +84,7 @@ def train_test(training,file_name):
 				running_loss = 0.0
 				torch.save(net.state_dict(), os.path.join('NN_models','MNIST_data','model_parameter_tanh.pkl'))
 	else:
-		net.load_state_dict(torch.load(os.path.join('NN_models','MNIST_data','model_parameter_selu.pkl')))
+		net.load_state_dict(torch.load(os.path.join('NN_models','MNIST_data','model_parameter_tanh.pkl')))
 		correct = 0
 		total = 0
 		for data in data_loader_test:
