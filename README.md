@@ -1,6 +1,6 @@
 # Activation Function Demo
 
-The "Activation Function Demo" is a demo for implementing activation function with the mathod propsed in paper:[A](http://pytorch.org/), and evaluating the performance of it with different precision on diffierent datasets.And here is an example that we implemeted:
+The "Activation Function Demo" is a demo for implementing activation function with the mathod propsed in paper:[A](http://pytorch.org/), and evaluating the performance of it with different precision on diffierent datasets. And here is an example that we implemeted:
 ![](https://kf0kgg.dm.files.1drv.com/y4mwgYeyqn7Xbb9KPVmqpKRdlekCRd5U-W8evo5Qk-IG4wLbyy7I9dNT7OoK2JEV3mIPp0s3mgzxqI89FS-NQqQa5deQ15ZPSDeMkLIe5boV18MuLIMSPjeM59GD2c5Dxprl2SspygIKMwY7dhd3_PpezL6BVvQiMv60ZmgnZ31b-TtpCugD5XLYSIlDFyEF3iJ5v6SnN7ulu8hFPMnbdy9tA/af.png?psid=1)
 
 Untill now the activation function we supported:
@@ -84,7 +84,7 @@ Implement selu in [-3.875,0], output: 1 bit for integer part, 6 bits for the dec
 
 	python main.py tanh -3.875 0 1 6 4
 
-After Implemetation, you can find the verilog file in path:AF_implementation\verilog_file and the name rule is:
+After Implemetation, you can find the verilog file in path:AF\_implementation\\verilog_file and the name rule is:
 
 AF\_(int bit width of outputs)\_(dicimal bit width of outputs)\_(input bit width).v
 
@@ -295,8 +295,11 @@ Then we replaced the AF of these models with the AF we implemented, validate the
    </tr>
 </table>
 The AF name rule above is:
+
 AF\_(int bit width of outputs)\_(dicimal bit width of outputs)\_(input bit width)
+
 # Download Parameters
+
 ## MNIST:
 
 * tanh:<https://1drv.ms/u/s!AkUQ2WwI-uoGbCijuQvR0bnebmQ>
@@ -318,7 +321,7 @@ code:<https://1drv.ms/u/s!AkUQ2WwI-uoGaiNYdZQ8RS5lV9g>
 
 Retrained:
 
-* tanh_4:
+* [tanh_4]()
 * [tanh_5]()
 * [tanh_6]()
 * [SeLU_4]()
