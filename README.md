@@ -15,6 +15,7 @@ And the evaluating datasets:
 - [CIFAR10](https://www.cs.toronto.edu/~kriz/cifar.html)
 - [ImageNet](http://www.imagenet.stanford.edu/challenges/LSVRC/2012/nonpub-downloads)
 
+
 # Requirements
 For implementation
 
@@ -327,3 +328,23 @@ Retrained:
 * [SeLU_4]()
 * [SeLU_5]()
 * [SeLU_6]()
+
+
+# Reference
+1. A. Krizhevsky, I. Sutskever, and G. E. Hinton, “ImageNet Classification
+with Deep Convolutional Neural Networks,” in Advances in Neural
+Information Processing Systems 25, F. Pereira, C. J. C. Burges, L. Bottou,
+and K. Q. Weinberger, Eds. Curran Associates, Inc., 2012, p.
+1097?1105.
+2. G. Hinton, L. Deng, D. Yu, G. Dahl, A. rahman Mohamed, N. Jaitly,
+A. Senior, V. Vanhoucke, P. Nguyen, T. Sainath, and B. Kingsbury,
+“Deep neural networks for acoustic modeling in speech recognition,”
+Signal Processing Magazine, 2012.
+3. M. Luong, H. Pham, and C. D. Manning, “Effective approaches to
+attention-based neural machine translation,” CoRR, vol. abs/1508.04025,
+2015.
+4. G. Cybenko, “Approximation by superpositions of a sigmoidal function,”
+Approximation Theory & Its Applications, vol. 9, no. 3, pp. 17–28, 1993.
+5. C. W. Lin and J. S. Wang, “A digital circuit design of hyperbolic tangent
+sigmoid function for neural networks,” in IEEE International Symposium
+on Circuits and Systems, 2008, pp. 856–859.
