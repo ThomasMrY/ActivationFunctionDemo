@@ -1,6 +1,7 @@
 # Activation Function Demo
 
-The "Activation Function Demo" is a demo for implementing activation function with the mathod propsed in paper:[A](http://pytorch.org/), and evaluating the performance of it with different precision on diffierent datasets.
+The "Activation Function Demo" is a demo for implementing activation function with the mathod propsed in paper:[A](http://pytorch.org/), and evaluating the performance of it with different precision on diffierent datasets.And here is an example that we implemeted:
+![](https://kf0kgg.dm.files.1drv.com/y4mwgYeyqn7Xbb9KPVmqpKRdlekCRd5U-W8evo5Qk-IG4wLbyy7I9dNT7OoK2JEV3mIPp0s3mgzxqI89FS-NQqQa5deQ15ZPSDeMkLIe5boV18MuLIMSPjeM59GD2c5Dxprl2SspygIKMwY7dhd3_PpezL6BVvQiMv60ZmgnZ31b-TtpCugD5XLYSIlDFyEF3iJ5v6SnN7ulu8hFPMnbdy9tA/af.png?psid=1)
 
 Untill now the activation function we supported:
 
@@ -82,6 +83,19 @@ Simualte the activation function in software:
 Implement selu in [-3.875,0], output: 1 bit for integer part, 6 bits for the decimal part, input: 4 bits
 
 	python main.py tanh -3.875 0 1 6 4
+
+After Implemetation, you can find the verilog file in path:AF_implementation\verilog_file and the name rule is:
+
+AF\_(int bit width of outputs)\_(dicimal bit width of outputs)\_(input bit width).v
+
+Example: tanh\_1\_4\_4.v
+
+
+
+Here is an verilog file example:
+![](https://kf0kgg.dm.files.1drv.com/y4m94t3SsnsSUE1Hbl2b9EaA9VhweiIPign14bYhUot080L8BJwv3NO-cNgrNVKQPH8bKl7DnJnSdfNSmLwKoPX5IygyMm3N5TruBJELhuGTH8G5kUsT6mP69TUVauXqtARW2QBaB0ZsNHjyyVI5-i1UAw6U6rBQRc39BXwHPfOVsieI-bK3ghilhlF5lWViiA2JLLPs6HntaMs3AiJE1FRbA/verilog.png?psid=1)
+And also you will get three coe files:y.coe, b.coe, k.coe, Here is an examples of coe files:
+![](https://kf0kgg.dm.files.1drv.com/y4myjOyu6RXFsRFrteWSmJ3hjf8Ta_xf8_ydkmqGXuv-AoCWTmkQyCMu040hmp2I5ALBd1o6aPFV36cMCLxUCmmSqQ6gylrwwj0iwMzLw2i8yZg7HpbYFV9I8dWJGr21VKeg7SmkQ6qfh4OgBdM9owNGO1KputxAGmC6hKfqkS6f9ieNl1CW_o9v2SwKHCtmCXHYMVbfXKv6BimSQa2OPQJog/coe.png?psid=1)
  
 ## Evaluation
 To evaluation the activation function we implement we gernerate a simulate version on activation function in pytorch to simulate the effect on the neural network. Before start we need to download the parameters we trained:
@@ -280,3 +294,33 @@ Then we replaced the AF of these models with the AF we implemented, validate the
       <td>0.846/2.644</td>
    </tr>
 </table>
+The AF name rule above is:
+AF\_(int bit width of outputs)\_(dicimal bit width of outputs)\_(input bit width)
+# Download Parameters
+## MNIST:
+
+* tanh:<https://1drv.ms/u/s!AkUQ2WwI-uoGbCijuQvR0bnebmQ>
+* SeLU:<https://1drv.ms/u/s!AkUQ2WwI-uoGcirSZXZWQ7zSjsE>
+
+## CIFAR-10:
+
+* tanh:<https://1drv.ms/u/s!AkUQ2WwI-uoGbYJEmV0pq_Kb-gQ>
+* SeLu:<https://1drv.ms/u/s!AkUQ2WwI-uoGbuNlg1KxX5iQU7M>
+
+## ImageNet:
+
+Unretrained:
+
+code:<https://1drv.ms/u/s!AkUQ2WwI-uoGaiNYdZQ8RS5lV9g>
+
+* tanh:<https://1drv.ms/u/s!AkUQ2WwI-uoGaOmwYBWEmq_sv1M>
+* SeLU:<https://1drv.ms/u/s!AkUQ2WwI-uoGZz1vizL_Jov8dpY>
+
+Retrained:
+
+* tanh_4:
+* [tanh_5]()
+* [tanh_6]()
+* [SeLU_4]()
+* [SeLU_5]()
+* [SeLU_6]()
