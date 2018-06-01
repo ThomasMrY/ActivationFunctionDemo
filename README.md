@@ -1,7 +1,7 @@
 # Activation Function Demo
 
 The "Activation Function Demo" is a demo for implementing activation function with the mathod propsed in paper:[A](http://pytorch.org/), and evaluating the performance of it with different precision on diffierent datasets. And here is an example that we implemeted:
-![](https://kf0kgg.dm.files.1drv.com/y4mwgYeyqn7Xbb9KPVmqpKRdlekCRd5U-W8evo5Qk-IG4wLbyy7I9dNT7OoK2JEV3mIPp0s3mgzxqI89FS-NQqQa5deQ15ZPSDeMkLIe5boV18MuLIMSPjeM59GD2c5Dxprl2SspygIKMwY7dhd3_PpezL6BVvQiMv60ZmgnZ31b-TtpCugD5XLYSIlDFyEF3iJ5v6SnN7ulu8hFPMnbdy9tA/af.png?psid=1)
+![](https://bbojia.bn.files.1drv.com/y4mCLg2iVujqTxYebloAkMe-yBDgGTcfmBrotdGRWZnFfitbOnjpIe_zM5b3IJYdPaxrl9KWJAxiTCem2FOlkoE9JdpfeUOXro4gXIAC0R5Tbr9sWsHWjV2gswxNFj_Uect5wUF2FAk9yJ7kqRvhqkg7nbjC3XpO6o-MPY-I3wOja2C0DXedq1EhDZ3bCeXmQiIhqrIgl2yVJW_EMoQsCgMng/af.png?psid=1)
 
 Untill now the activation function we supported:
 
@@ -14,7 +14,9 @@ And the evaluating datasets:
 - [MNIST](http://yann.lecun.com/exdb/mnist/)
 - [CIFAR10](https://www.cs.toronto.edu/~kriz/cifar.html)
 - [ImageNet](http://www.imagenet.stanford.edu/challenges/LSVRC/2012/nonpub-downloads)
+### License
 
+Activation Function Demo is released under the MIT License (refer to the LICENSE file for details).
 
 # Requirements
 For implementation
@@ -94,16 +96,16 @@ Example: tanh\_1\_4\_4.v
 
 
 Here is an verilog file example:
-![](https://kf0kgg.dm.files.1drv.com/y4m94t3SsnsSUE1Hbl2b9EaA9VhweiIPign14bYhUot080L8BJwv3NO-cNgrNVKQPH8bKl7DnJnSdfNSmLwKoPX5IygyMm3N5TruBJELhuGTH8G5kUsT6mP69TUVauXqtARW2QBaB0ZsNHjyyVI5-i1UAw6U6rBQRc39BXwHPfOVsieI-bK3ghilhlF5lWViiA2JLLPs6HntaMs3AiJE1FRbA/verilog.png?psid=1)
-And also you will get three coe files:y.coe, b.coe, k.coe, Here is an examples of coe files:
-![](https://kf0kgg.dm.files.1drv.com/y4myjOyu6RXFsRFrteWSmJ3hjf8Ta_xf8_ydkmqGXuv-AoCWTmkQyCMu040hmp2I5ALBd1o6aPFV36cMCLxUCmmSqQ6gylrwwj0iwMzLw2i8yZg7HpbYFV9I8dWJGr21VKeg7SmkQ6qfh4OgBdM9owNGO1KputxAGmC6hKfqkS6f9ieNl1CW_o9v2SwKHCtmCXHYMVbfXKv6BimSQa2OPQJog/coe.png?psid=1)
+![](https://bbojia.bn.files.1drv.com/y4mRU5CS-7-kBB9xfljALBGy4s9oe6X5obp3EjI2NFqt9RKMtYUpFD6RhTWHMDg2MajJ57EAXmOdfj60QHNiTOxWiCB3DY9Ve-YVEgUjuhzzSWZm_PCh7YmB-T8PhkcO_lM_Hm8Nio9cSj_Ukyrxsm9qrm6WUCDDBOrots0lZj35nZPRbbg_PCK2WX5PThtVLb382eQ4eepcv1boPH5-dcc-g/verilog.png?psid=1)
+And also you will get three coe files at AF\_implementation\\coe_file\\tanh\_1\_6\_4:y.coe, b.coe, k.coe, Here is an examples of coe files:
+![](https://bbojia.bn.files.1drv.com/y4mDkmbSBtQIW6lV1BfCATs7BI5Hx0IqBZEsM9bSj7GuY6N8r0GlyGgmz1c53UUcxXBZBJGOyt33ErH9zLnS-UtsKhHN3365KdoXAnxcYw06taUEr_viOU0W5tvyEALYdanz2nQy9o5KCM3vPXpyeWeTZyHGVP0PNmyG03tsgwYplgSnyzd_ESVIM_h4pF-Tkz61vyR-njnqxaplr7W9Uyraw/coe.png?psid=1)
  
 ## Evaluation
 To evaluation the activation function we implement we gernerate a simulate version on activation function in pytorch to simulate the effect on the neural network. Before start we need to download the parameters we trained:
 
-* MNIST:
-* CIFAR10:
-* ImageNet:
+* [MNIST](#MNIST)
+* [CIFAR-10](#CIFAR-10)
+* [ImageNet](#ImageNet):
 
 Evaluate the tanh we implement above:
 
@@ -303,29 +305,27 @@ AF\_(int bit width of outputs)\_(dicimal bit width of outputs)\_(input bit width
 
 ## MNIST:
 
-* tanh:<https://1drv.ms/u/s!AkUQ2WwI-uoGbCijuQvR0bnebmQ>
-* SeLU:<https://1drv.ms/u/s!AkUQ2WwI-uoGcirSZXZWQ7zSjsE>
+* tanh:<https://1drv.ms/u/s!AhWdKGJb0BiJcJzuhsP_RIB9zPA>
+* SeLU:<https://1drv.ms/u/s!AhWdKGJb0BiJb0VJkTLqin7ICvY>
 
 ## CIFAR-10:
 
-* tanh:<https://1drv.ms/u/s!AkUQ2WwI-uoGbYJEmV0pq_Kb-gQ>
-* SeLu:<https://1drv.ms/u/s!AkUQ2WwI-uoGbuNlg1KxX5iQU7M>
+* tanh:<https://1drv.ms/u/s!AhWdKGJb0BiJcdxTBqxubJDc_Gw>
+* SeLu:<https://1drv.ms/u/s!AhWdKGJb0BiJdaKh7s-e3mmtVUc>
 
 ## ImageNet:
 
 Unretrained:
 
-code:<https://1drv.ms/u/s!AkUQ2WwI-uoGaiNYdZQ8RS5lV9g>
+code:<https://1drv.ms/u/s!AhWdKGJb0BiJd1inN2l2nnAh8z8>
 
-* tanh:<https://1drv.ms/u/s!AkUQ2WwI-uoGaOmwYBWEmq_sv1M>
-* SeLU:<https://1drv.ms/u/s!AkUQ2WwI-uoGZz1vizL_Jov8dpY>
+* tanh:<https://1drv.ms/u/s!AhWdKGJb0BiJdhLxPNtwoWaIHMw>
+* SeLU:<https://1drv.ms/u/s!AhWdKGJb0BiJbiU19WakQ4tHyrk>
 
 Retrained:
 
-* [tanh_4]()
-* [tanh_5]()
-* [tanh_6]()
-* [SeLU_4]()
+* tanh:<https://1drv.ms/u/s!AhWdKGJb0BiJbYP_z8mfUOecyr4>
+* SeLU_4:<https://1drv.ms/u/s!AhWdKGJb0BiJbGTvTMdgFSURi7A>
 * [SeLU_5]()
 * [SeLU_6]()
 
