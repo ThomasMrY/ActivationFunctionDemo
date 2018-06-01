@@ -103,9 +103,9 @@ And also you will get three coe files at AF\_implementation\\coe_file\\tanh\_1\_
 ## Evaluation
 To evaluation the activation function we implement we gernerate a simulate version on activation function in pytorch to simulate the effect on the neural network. Before start we need to download the parameters we trained:
 
-* [MNIST](#MNIST)
-* [CIFAR-10](#CIFAR-10)
-* [ImageNet](#ImageNet):
+* [MNIST](#mnist)
+* [CIFAR-10](#cifar-10)
+* [ImageNet](#imagenet):
 
 Evaluate the tanh we implement above:
 
@@ -305,15 +305,21 @@ AF\_(int bit width of outputs)\_(dicimal bit width of outputs)\_(input bit width
 
 ## MNIST:
 
+Please download the following files and put them in:AF\_implementation\\NN\_models\\MNIST\_data before evaluating your activation functions
+
 * tanh:<https://1drv.ms/u/s!AhWdKGJb0BiJcJzuhsP_RIB9zPA>
 * SeLU:<https://1drv.ms/u/s!AhWdKGJb0BiJb0VJkTLqin7ICvY>
 
 ## CIFAR-10:
 
+Please download the following files and put them in:AF\_implementation\\NN\_models\\CIFAR\_data before evaluating your activation functions
+
 * tanh:<https://1drv.ms/u/s!AhWdKGJb0BiJcdxTBqxubJDc_Gw>
 * SeLu:<https://1drv.ms/u/s!AhWdKGJb0BiJdaKh7s-e3mmtVUc>
 
 ## ImageNet:
+
+Please download the following files and put them in:AF\_implementation\\NN\_models\\IMGNET\_data before evaluating your activation functions
 
 Unretrained:
 
@@ -322,6 +328,8 @@ code:<https://1drv.ms/u/s!AhWdKGJb0BiJd1inN2l2nnAh8z8>
 * tanh:<https://1drv.ms/u/s!AhWdKGJb0BiJdhLxPNtwoWaIHMw>
 * SeLU:<https://1drv.ms/u/s!AhWdKGJb0BiJbiU19WakQ4tHyrk>
 
+This has an enormous accuracy loss, thus we retrain the AlexNet with the AF\_apx(approximate AFs)
+
 Retrained:
 
 * tanh:<https://1drv.ms/u/s!AhWdKGJb0BiJbYP_z8mfUOecyr4>
@@ -329,7 +337,7 @@ Retrained:
 * [SeLU_5]()
 * [SeLU_6]()
 
-
+Where, SeLU_4,SeLU_5,SeLU_6 is the parameters file of retraining AlexNet with SeLU\_1\_4\_4, SeLU\_1\_4\_5,SeLU\_1\_4\_6.
 # Reference
 1. A. Krizhevsky, I. Sutskever, and G. E. Hinton, “ImageNet Classification
 with Deep Convolutional Neural Networks,” in Advances in Neural
@@ -343,8 +351,8 @@ Signal Processing Magazine, 2012.
 3. M. Luong, H. Pham, and C. D. Manning, “Effective approaches to
 attention-based neural machine translation,” CoRR, vol. abs/1508.04025,
 2015.
-4. G. Cybenko, “Approximation by superpositions of a sigmoidal function,”
-Approximation Theory & Its Applications, vol. 9, no. 3, pp. 17–28, 1993.
-5. C. W. Lin and J. S. Wang, “A digital circuit design of hyperbolic tangent
+4. C. W. Lin and J. S. Wang, “A digital circuit design of hyperbolic tangent
 sigmoid function for neural networks,” in IEEE International Symposium
 on Circuits and Systems, 2008, pp. 856–859.
+5. G. Cybenko, “Approximation by superpositions of a sigmoidal function,”
+Approximation Theory & Its Applications, vol. 9, no. 3, pp. 17–28, 1993.
