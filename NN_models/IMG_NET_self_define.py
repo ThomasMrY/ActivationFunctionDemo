@@ -9,12 +9,12 @@ from torch.nn.modules.module import Module
 import time
 import os
 import NN_models.ops as ops
+from NN_models.ImageNet_path import *
 
 
 def train_test(training,flie_name):
     distributed = False
     EPOCHES = 200
-    ILSVRC2012 = "/data2/ILSVRC2012/"
     #The path of ILSVRC2012
     traindir = os.path.join(ILSVRC2012, 'train')
     valdir = os.path.join(ILSVRC2012, 'val')

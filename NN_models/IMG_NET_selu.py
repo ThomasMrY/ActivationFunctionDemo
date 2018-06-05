@@ -7,6 +7,7 @@ from torchvision import datasets, transforms
 import time
 import os
 from NN_models.models import *
+from NN_models.ImageNet_path import *
 import math
 def _calculate_lecun_fan(tensor, mode):
     k = tensor.size(0)*tensor.size(1)*tensor.size(2)
@@ -22,7 +23,6 @@ lecun_norm = init._make_deprecate(lecun_norm_)
 def train_test(training,file_name):
     distributed = False
     EPOCHES = 200
-    ILSVRC2012 = "/data2/ILSVRC2012/"
     traindir = os.path.join(ILSVRC2012, 'train')
     valdir = os.path.join(ILSVRC2012, 'val')
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],

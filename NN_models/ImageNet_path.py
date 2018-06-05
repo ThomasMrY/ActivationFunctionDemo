@@ -1,0 +1,1 @@
+ILSVRC2012 = "/data2/ILSVRC2012/"
