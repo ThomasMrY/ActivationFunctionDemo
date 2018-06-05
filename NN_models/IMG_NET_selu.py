@@ -170,15 +170,15 @@ def train_test(training,file_name):
                        epoch, i, len(train_loader), batch_time=batch_time,
                        data_time=data_time, loss=losses, top1=top1, top5=top5))
             if (i % 1000 == 0):
-                torch.save(alexnet.state_dict(), os.path.join('NN_models','IMGNET_data','IMGNET_selu'+file_name+'.pth'))
+                torch.save(alexnet.state_dict(), os.path.join('NN_models','IMGNET_data','IMGNET_selu'+file_name[-1]+'.pth'))
     optimizer = optim.Adam(alexnet.parameters(), lr=1e-4, betas=(0.9, 0.99))
     criterion = nn.CrossEntropyLoss(size_average=False)
     if(training == True):
-        alexnet.load_state_dict(torch.load(os.path.join('NN_models', 'IMGNET_data', 'IMGNET_selu' + file_name + '.pth')))
+        alexnet.load_state_dict(torch.load(os.path.join('NN_models', 'IMGNET_data', 'IMGNET_selu' + file_name[-1] + '.pth')))
         for epoch in range(EPOCHES):
             train(train_loader,alexnet,criterion,optimizer,epoch)
     else:
-        alexnet.load_state_dict(torch.load(os.path.join('NN_models','IMGNET_data','IMGNET_selu'+file_name+'.pth')))
+        alexnet.load_state_dict(torch.load(os.path.join('NN_models','IMGNET_data','IMGNET_selu'+file_name[-1]+'.pth')))
         acc1 = validate(val_loader,alexnet,criterion)
         with open(os.path.join('NN_models', 'Acc', 'IMGNET_acc_apx.txt'), 'a') as f:
             f.write(file_name + ' ')

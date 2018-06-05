@@ -63,3 +63,9 @@ def selu_apx(input_d,file_name):
 		input_d = torch.add(input_d, alpha)
 		output = torch.add(temp_2 * output_1, output)
 	return output
+def self_define_torch(x):
+	#here implement the torch version of self_define
+	return x
+def self_define_torch_apx(x):
+	#here implement the torch version of self_define apx
+	return x

@@ -31,9 +31,7 @@ def train_test(training):
 												   batch_size = 64,
 												   shuffle = True)
 
-	def self_define_torch(x):
-		#here implement the torch version of self_define
-		return x
+
 	class Net(nn.Module):
 		def __init__(self):
 			super(Net,self).__init__()
@@ -52,11 +50,11 @@ def train_test(training):
 			x = self.fc3(x)
 			return x
 		def forward_apx(self,x):
-			x = F.max_pool2d(ops.self_define_apx(self.cov1(x)), (2, 2))
-			x = F.max_pool2d(ops.self_define_apx(self.cov2(x)), (2, 2))
+			x = F.max_pool2d(ops.self_define_torch(self.cov1(x)), (2, 2))
+			x = F.max_pool2d(ops.self_define_torch(self.cov2(x)), (2, 2))
 			x = x.view(-1, 16 * 4 * 4)
-			x = ops.self_define_apx(self.fc1(x))
-			x = ops.self_define_apx(self.fc2(x))
+			x = ops.self_define_torch(self.fc1(x))
+			x = ops.self_define_torch(self.fc2(x))
 			x = self.fc3(x)
 			return x
 

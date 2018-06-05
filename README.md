@@ -1,15 +1,15 @@
 # Activation Function Demo
 
-The "Activation Function Demo" is a demo for implementing activation function with the mathod propsed in paper:[A](http://pytorch.org/), and evaluating the performance of it with different precision on diffierent datasets. And here is an example that we implemeted:
+The "Activation Function Demo" is a demo for implementing activation function with the mathod, propsed in paper:[A](http://pytorch.org/), and evaluating the performance of it with different precision on diffierent datasets. And here is an example that we implemeted:
 ![](https://bbojia.bn.files.1drv.com/y4mCLg2iVujqTxYebloAkMe-yBDgGTcfmBrotdGRWZnFfitbOnjpIe_zM5b3IJYdPaxrl9KWJAxiTCem2FOlkoE9JdpfeUOXro4gXIAC0R5Tbr9sWsHWjV2gswxNFj_Uect5wUF2FAk9yJ7kqRvhqkg7nbjC3XpO6o-MPY-I3wOja2C0DXedq1EhDZ3bCeXmQiIhqrIgl2yVJW_EMoQsCgMng/af.png?psid=1)
 
-Untill now the activation function we supported:
+Until now the activation function we supported:
 
 - tanh
 - selu
 - self_define
 
-And the evaluating datasets:
+And the evaluation datasets:
 
 - [MNIST](http://yann.lecun.com/exdb/mnist/)
 - [CIFAR10](https://www.cs.toronto.edu/~kriz/cifar.html)
@@ -47,9 +47,9 @@ The Arguements
                i_bits
 
 	positional arguments:
-	{tanh,selu,self_define} The activation function you want to implemet(tanh,selu,self_define)
-	rang_l                The range of the AF you want to implement(left end)
-	rang_r                The range of the AF you want to implement(right end)
+	{tanh,selu,self_define} The activation function you want to implement(tanh,selu,self_define)
+	rang_l                The range of the AF you want to implement(left endpoint)
+	rang_r                The range of the AF you want to implement(right endpoint)
 	int_bits              The number of bits you want for the integer part of
                         the output
 	float_bits            The number of bits you want for the decimal part of
@@ -64,22 +64,22 @@ The Arguements
                         Generate the coes file or not(For ROM and kx+b)
 		-simulate SIMULATE    Simulate the implemented AF or not
 		-MNIST_retrain MNIST_RETRAIN
-                        Retrain MNIST with the AF or not
+                        Retrain ANN with the AF on MNIST  or not
 		-CIFAR_retrain CIFAR_RETRAIN
-                        Retrain CIFAR with the AF or not
+                        Retrain ANN with the AF on CIFAR-10  or not
 		-IMGNET_retrain IMGNET_RETRAIN
-                        Retrain IMGNET with the AF or not
+                        Retrain ANN with the AF on IMGNET  or not
 		-Test_on_Datasets TEST_ON_DATASETS
                         Test the implemented AF on MNIST,CIFAR,IMGNET or not
 # Examples:
 ## Implemetation
-The default mode implement the activation function of a specific range with different precisions and gernarate a verilog file of our mathod and coe files of the mathods we compared in the paper.
+The default mode of it can implement the activation function of a specific range with different precisions and generate a verilog file of our method and coe files of the methods we compared in the paper.
 
 Implement tanh in [0,2], output: 1 bit for integer part, 6 bits for the decimal part, input: 4 bits
 
 	python main.py tanh 0 2 1 6 4
 
-Simualte the activation function in software:
+Simulate the activation function in software and plot the figure of it:
 
 	python main.py tanh 0 2 1 6 4 -Simulate=True
 
@@ -87,9 +87,9 @@ Implement selu in [-3.875,0], output: 1 bit for integer part, 6 bits for the dec
 
 	python main.py tanh -3.875 0 1 6 4
 
-After Implemetation, you can find the verilog file in path:AF\_implementation\\verilog_file and the name rule is:
+After Implementation, you can find the verilog file in path:AF\_implementation\\verilog_file and the name rule is:
 
-AF\_(int bit width of outputs)\_(dicimal bit width of outputs)\_(input bit width).v
+AF\_(integer bit width of outputs)\_(decimal bit width of outputs)\_(input bit width).v
 
 Example: tanh\_1\_4\_4.v
 
@@ -110,17 +110,19 @@ To evaluation the activation function we implement we gernerate a simulate versi
 Evaluate the tanh we implement above:
 
 	python main.py tanh 0 2 1 6 4 -Test_on_Datasets=True
+Attention:You need to edit the dataset path in the NN_models/IMG\_NET\_tanh.py(IMG\_NET\_selu.py,here IMG\_NET\_tanh.py is an example, each of them need to be edited), so that it can find the evaluation datasets.
 ## Retrian
-To evaluate a self define activation function we need to retrain the neural networks. To improve the accuracy we also need to retrain the neural networks. So we also provide the function of retraining.
+To evaluate a self define activation function we need to retrain the neural networks. To improve the accuracy we still need to retrain the neural networks. So we also provide the function of retraining.
 
 Here we take evaluating the tanh_apx on the ImageNet as an exmaple:
 
 	python main.py tanh 0 2 1 6 4 -IMGNET_retrain=True
+Attention:You need to edit the dataset path in files: NN\_models/IMG\_NET\_tanh.py(IMG\_NET\_selu.py,here IMG\_NET\_tanh.py is an example, each of them need to be edited), so that it can find the training datasets.
 # Accuracy
 We evaluate the performance of tanh and selu of different input/output precision on popular dataset and models.
 
 
-We trained a LeNet-5 on MNIST of  which  the AFs were all replaced with tanh/ReLU,and trained a vgg-16 on CIFAR-10 of which  the AFs were all replaced with tanh/ReLU, Then an alexnet was trained on ImageNet of which  the AFs were all replaced with tanh/ReLU on Imagenet. Then we get the following origin accuracy:
+We trained a LeNet-5 on MNIST of  which  the AFs were all replaced with tanh/ReLU,and trained a vgg-16 on CIFAR-10 of which  the AFs were all replaced with tanh/ReLU, Then an alexnet was trained on ImageNet of which  the AFs were all replaced with tanh/ReLU. Then we get the following origin accuracy:
 <table>
    <tr>
       <td>origin</td>
@@ -143,7 +145,7 @@ We trained a LeNet-5 on MNIST of  which  the AFs were all replaced with tanh/ReL
 </table>
 
 
-Then we replaced the AF of these models with the AF we implemented, validate the models on the test set, and get the following accuracies, but we find that accuracy loss was huge nearly destroied the models ability  on Imagenet. This is due to eeror accumulatting, the , so we use some training tricks to increase it. We retraining the models with the AF we implemented, in this way, tanh get a enormous increase, but Selu still very low, then we add BNs (batch norm) in the models, then we also get a enormous on accuracy  on ImageNet.
+Then we replaced the AF of these models with the AF we implemented, validate the models on the test set, and get the following accuracies, but we find that accuracy loss was huge nearly destroied the models ability  on Imagenet. This is due to error accumulatting, thus, we use some training tricks to increase it. We retraining the models with the AF we implemented, in this way, tanh get a enormous increase, but Selu still very low, then we add BNs (batch norm) in the models, in this way, we can reduce the accuracy loss.
 <table>
    <tr>
       <td>AF</td>
@@ -299,8 +301,7 @@ Then we replaced the AF of these models with the AF we implemented, validate the
 </table>
 The AF name rule above is:
 
-AF\_(int bit width of outputs)\_(dicimal bit width of outputs)\_(input bit width)
-
+AF\_(integer bit width of outputs)\_(decimal bit width of outputs)\_(input bit width)
 # Download Parameters
 
 ## MNIST:
@@ -324,6 +325,8 @@ Please download the following files and put them in:AF\_implementation\\NN\_mode
 Unretrained:
 
 code:<https://1drv.ms/u/s!AhWdKGJb0BiJd1inN2l2nnAh8z8>
+
+The default code in the demo is for retrained mode, so this file need to be extracted to path:NN\_models/
 
 * tanh:<https://1drv.ms/u/s!AhWdKGJb0BiJdhLxPNtwoWaIHMw>
 * SeLU:<https://1drv.ms/u/s!AhWdKGJb0BiJbiU19WakQ4tHyrk>
@@ -351,8 +354,12 @@ Signal Processing Magazine, 2012.
 3. M. Luong, H. Pham, and C. D. Manning, “Effective approaches to
 attention-based neural machine translation,” CoRR, vol. abs/1508.04025,
 2015.
-4. C. W. Lin and J. S. Wang, “A digital circuit design of hyperbolic tangent
+4. G. Cybenko, “Approximation by superpositions of a sigmoidal function,”
+Approximation Theory & Its Applications, vol. 9, no. 3, pp. 17–28, 1993.
+5. C. W. Lin and J. S. Wang, “A digital circuit design of hyperbolic tangent
 sigmoid function for neural networks,” in IEEE International Symposium
 on Circuits and Systems, 2008, pp. 856–859.
-5. G. Cybenko, “Approximation by superpositions of a sigmoidal function,”
-Approximation Theory & Its Applications, vol. 9, no. 3, pp. 17–28, 1993.
+6. K. Basterretxea, J. M. Tarela, I. Del Campo, and G. Bosque, “An
+experimental study on nonlinear function computation for neural/fuzzy
+hardware design,” IEEE Transactions on Neural Networks, vol. 18, no. 1,
+pp. 266–83, 2007.

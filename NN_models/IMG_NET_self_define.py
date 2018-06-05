@@ -9,6 +9,8 @@ from torch.nn.modules.module import Module
 import time
 import os
 import NN_models.ops as ops
+
+
 def train_test(training,flie_name):
     distributed = False
     EPOCHES = 200
@@ -47,9 +49,6 @@ def train_test(training,flie_name):
         batch_size=256, shuffle=False,
         num_workers=4, pin_memory=True)         # default workers = 4
 
-    def self_define_torch(x):
-        # here implement the torch version of self_define
-        return x
     class SELF_DEFINE(Module):
 
         def __init__(self, inplace=False):
@@ -57,15 +56,15 @@ def train_test(training,flie_name):
             self.inplace = inplace
 
         def forward(self, input):
-            return self_define_torch(input)
+            return ops.self_define_torch(input)
     class SELF_DEFINE_APX(Module):
 
         def __init__(self, inplace=False):
-            super(APX_TANH, self).__init__()
+            super(SELF_DEFINE_APX, self).__init__()
             self.inplace = inplace
 
         def forward(self, input):
-            return ops.self_define_apx(input)
+            return ops.self_define_torch_apx(input)
     alexnet = models.alexnet(pretrained=True)
     alexnet.features[1] = SELF_DEFINE()
     alexnet.features[4] = SELF_DEFINE()

@@ -16,18 +16,25 @@ import argparse
 from NN_models.models import *
 from NN_models.utils import progress_bar
 from torch.nn.modules.module import Module
+import NN_models.ops as ops
 
 
 def train_test(training, file_name):
-    class APX_TANH(Module):
+    class SELF_DEFINE(Module):
 
         def __init__(self, inplace=False):
-            super(APX_TANH, self).__init__()
+            super(SELF_DEFINE, self).__init__()
             self.inplace = inplace
 
         def forward(self, input):
-            return ops.tanh_apx(input, file_name)
+            return ops.self_define_torch(input)
+    class SELF_DEFINE_APX(Module):
+        def __init__(self, inplace=False):
+            super(SELF_DEFINE_APX, self).__init__()
+            self.inplace = inplace
 
+        def forward(self, input):
+            return ops.self_define_torch_apx(input)
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     best_acc = 0  # best test accuracy
     start_epoch = 0  # start from epoch 0 or last checkpoint epoch
@@ -57,7 +64,20 @@ def train_test(training, file_name):
     classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 
     print('==> ...Building model...')
-    net = VGG_tanh('VGG16', file_name)
+    net = VGG('VGG16')
+    net.features[2] = SELF_DEFINE()
+    net.features[5] = SELF_DEFINE()
+    net.features[9] = SELF_DEFINE()
+    net.features[12] = SELF_DEFINE()
+    net.features[16] = SELF_DEFINE()
+    net.features[19] = SELF_DEFINE()
+    net.features[22] = SELF_DEFINE()
+    net.features[26] = SELF_DEFINE()
+    net.features[29] = SELF_DEFINE()
+    net.features[32] = SELF_DEFINE()
+    net.features[36] = SELF_DEFINE()
+    net.features[39] = SELF_DEFINE()
+    net.features[42] = SELF_DEFINE()
     net = net.cuda()
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(net.parameters(), lr=0.01, momentum=0.9, weight_decay=5e-4)
@@ -107,19 +127,19 @@ def train_test(training, file_name):
     else:
         net.load_state_dict(torch.load(os.path.join('NN_models', 'CIFAR_data', 'CIFAR_tanh.pth')))
         acc1 = test(0)
-        net.features[2] = APX_TANH()
-        net.features[5] = APX_TANH()
-        net.features[9] = APX_TANH()
-        net.features[12] = APX_TANH()
-        net.features[16] = APX_TANH()
-        net.features[19] = APX_TANH()
-        net.features[22] = APX_TANH()
-        net.features[26] = APX_TANH()
-        net.features[29] = APX_TANH()
-        net.features[32] = APX_TANH()
-        net.features[36] = APX_TANH()
-        net.features[39] = APX_TANH()
-        net.features[42] = APX_TANH()
+        net.features[2] = SELF_DEFINE_APX()
+        net.features[5] = SELF_DEFINE_APX()
+        net.features[9] = SELF_DEFINE_APX()
+        net.features[12] = SELF_DEFINE_APX()
+        net.features[16] = SELF_DEFINE_APX()
+        net.features[19] = SELF_DEFINE_APX()
+        net.features[22] = SELF_DEFINE_APX()
+        net.features[26] = SELF_DEFINE_APX()
+        net.features[29] = SELF_DEFINE_APX()
+        net.features[32] = SELF_DEFINE_APX()
+        net.features[36] = SELF_DEFINE_APX()
+        net.features[39] = SELF_DEFINE_APX()
+        net.features[42] = SELF_DEFINE_APX()
         acc2 = test(0)
         with open(os.path.join('NN_models', 'Acc', 'CIFAR_acc.txt'), 'a') as f:
             f.write(file_name + ' ')
