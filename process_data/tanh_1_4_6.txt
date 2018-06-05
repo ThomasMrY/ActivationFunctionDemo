@@ -1,0 +1,5 @@
+the 0 line is all 0
+BE+A+BD+BC
+B'CF+B'CE+B'CD+BC'D'E'+A
+A'B'DF+A'B'DE+A'CD'E'F'+BD'E'+AB+BC+ACD
+A'B'DE'F'+A'BC'D'E'+A'BDE+AB'C'DF+AB'C'DE+ACD'+BCD+C'DEF+CD'EF+A'BDF+A'B'C'EF+A'B'CE'F'

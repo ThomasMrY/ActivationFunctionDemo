@@ -18,7 +18,6 @@ parser.add_argument("-simulate", help="Simulate the implemented AF or not",type=
 parser.add_argument("-MNIST_retrain", help="Retrain ANN with the AF on MNIST  or not",type=bool,default=False)
 parser.add_argument("-CIFAR_retrain", help="Retrain ANN with the AF on CIFAR-10  or not",type=bool,default=False)
 parser.add_argument("-IMGNET_retrain", help="Retrain ANN with the AF on IMGNET  or not",type=bool,default=False)
-parser.add_argument("-IMGNET_retrain", help="Retrain ANN with the AF on IMGNET  or not",type=bool,default=False)
 parser.add_argument("-Test_on_Datasets",help="Test the implemented AF on MNIST,CIFAR,IMGNET or not",type=bool,default=False)
 
 if(__name__=='__main__'):
