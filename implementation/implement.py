@@ -288,8 +288,8 @@ def test_on_datates(args):
         C_tanh.train_test(False,file_name)
         I_tanh.train_test(False,file_name)
     if (args.AF == 'selu'):
-        M_selu.train_test(False,file_name)
-        C_selu.train_test(False,file_name)
+        # M_selu.train_test(False,file_name)
+        # C_selu.train_test(False,file_name)
         I_selu.train_test(False,file_name)
     if (args.AF == 'self_define'):
         M_self_define.train_test(False,file_name)

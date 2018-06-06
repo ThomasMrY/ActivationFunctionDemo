@@ -336,9 +336,9 @@ This has an enormous accuracy loss, thus we retrain the AlexNet with the AF\_apx
 Retrained:
 
 * tanh:<https://1drv.ms/u/s!AhWdKGJb0BiJbYP_z8mfUOecyr4>
-* SeLU_4:<https://1drv.ms/u/s!AhWdKGJb0BiJbGTvTMdgFSURi7A>
-* [SeLU_5]()
-* [SeLU_6]()
+* SeLU_4:<https://1drv.ms/u/s!AhWdKGJb0BiJfPoaIL2VCqCSlvo>
+* SeLU_5:<https://1drv.ms/u/s!AhWdKGJb0BiJeuh1tcRBqAvWtBU>
+* SeLU_6:<https://1drv.ms/u/s!AhWdKGJb0BiJe5KHi1bFRzFFWww>
 
 Where, SeLU_4,SeLU_5,SeLU_6 is the parameters file of retraining AlexNet with SeLU\_1\_4\_4, SeLU\_1\_4\_5,SeLU\_1\_4\_6.
 # Reference
