@@ -323,27 +323,27 @@ def implemet_AF(args):
     if (AF == 'self_define'):
         x_linspace = [-1 * x for x in reversed(x_linspace)] + x_linspace
         valus = [-1 * x for x in reversed(valus)] + valus
-        output = open(os.path.join('process_data',file_name+'.pkl'), 'wb')
-        pickle.dump(x_linspace, output)
-        pickle.dump(valus, output)
-        output.close()
-        if(args.plot_AF == True):
-            plt.figure(1)
-            plt.plot(x_linspace, valus)
-            plt.show()
-        if (platform.system() == 'Windows'):
-            eps = read_eps(file_name)
-            if(args.generate_verilog == True):
-                generate_verilog(eps,file_name,int_bits,float_bits,i_bits)
-        if(args.generate_coe_file == True):
-            generate_coe(AF, rang, i_bits, int_bits, float_bits,file_name)
-        if(args.simulate == True):
-            simulate(eps,rang,int_bits,float_bits,i_bits)
-        if(args.Test_on_Datasets == True):
-            test_on_datates(args)
-        if (args.MNIST_retrain == True):
-            MNIST_retrain(args)
-        elif (args.CIFAR_retrain == True):
-            CIFAR_retrain(args)
-        elif (args.IMGNET_retrain == True):
-            IMGNET_retrain(args)
+    output = open(os.path.join('process_data',file_name+'.pkl'), 'wb')
+    pickle.dump(x_linspace, output)
+    pickle.dump(valus, output)
+    output.close()
+    if(args.plot_AF == True):
+        plt.figure(1)
+        plt.plot(x_linspace, valus)
+        plt.show()
+    if (platform.system() == 'Windows'):
+        eps = read_eps(file_name)
+        if(args.generate_verilog == True):
+            generate_verilog(eps,file_name,int_bits,float_bits,i_bits)
+    if(args.generate_coe_file == True):
+        generate_coe(AF, rang, i_bits, int_bits, float_bits,file_name)
+    if(args.simulate == True):
+        simulate(eps,rang,int_bits,float_bits,i_bits)
+    if(args.Test_on_Datasets == True):
+        test_on_datates(args)
+    if (args.MNIST_retrain == True):
+        MNIST_retrain(args)
+    elif (args.CIFAR_retrain == True):
+        CIFAR_retrain(args)
+    elif (args.IMGNET_retrain == True):
+        IMGNET_retrain(args)
