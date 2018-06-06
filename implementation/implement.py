@@ -303,33 +303,26 @@ def implemet_AF(args):
     rang = (args.rang_l,args.rang_r)
     file_name = AF + '_' + str(int_bits) + '_' + str(float_bits) + '_' + str(i_bits)
     l, r = rang
-    if(args.MNIST_retrain == True):
-        MNIST_retrain(args)
-    elif(args.CIFAR_retrain == True):
-        CIFAR_retrain(args)
-    elif(args.IMGNET_retrain == True):
-        IMGNET_retrain(args)
-    else:
-        if (AF == 'selu'):
-            bit_map, valus = aproxi_AF(selu, rang, int_bits, float_bits, i_bits)
-        if (AF == 'tanh'):
-            bit_map, valus = aproxi_AF(np.tanh, rang, int_bits, float_bits, i_bits)
-        if (AF == 'self_define'):
-            bit_map, valus = aproxi_AF(self_define, rang, int_bits, float_bits, i_bits)
-        x_linspace = [l + k * ((r - l) / (2 ** i_bits)) for k in range(2 ** i_bits)]
-        if (platform.system() == 'Windows'):
-            eps = get_expressions(bit_map)
-            save_eps(eps, file_name)
-        if(AF == 'selu'):
-            copy = [-1 * x for x in reversed(x_linspace)]
-            x_linspace = x_linspace + [-1 * x for x in reversed(x_linspace)]
-            valus = [-1 * x for x in valus] + copy
-        if(AF == 'tanh'):
-            x_linspace = [-1 * x for x in reversed(x_linspace)] + x_linspace
-            valus = [-1 * x for x in reversed(valus)] + valus
-        if (AF == 'self_define'):
-            x_linspace = [-1 * x for x in reversed(x_linspace)] + x_linspace
-            valus = [-1 * x for x in reversed(valus)] + valus
+    if (AF == 'selu'):
+        bit_map, valus = aproxi_AF(selu, rang, int_bits, float_bits, i_bits)
+    if (AF == 'tanh'):
+        bit_map, valus = aproxi_AF(np.tanh, rang, int_bits, float_bits, i_bits)
+    if (AF == 'self_define'):
+        bit_map, valus = aproxi_AF(self_define, rang, int_bits, float_bits, i_bits)
+    x_linspace = [l + k * ((r - l) / (2 ** i_bits)) for k in range(2 ** i_bits)]
+    if (platform.system() == 'Windows'):
+        eps = get_expressions(bit_map)
+        save_eps(eps, file_name)
+    if(AF == 'selu'):
+        copy = [-1 * x for x in reversed(x_linspace)]
+        x_linspace = x_linspace + [-1 * x for x in reversed(x_linspace)]
+        valus = [-1 * x for x in valus] + copy
+    if(AF == 'tanh'):
+        x_linspace = [-1 * x for x in reversed(x_linspace)] + x_linspace
+        valus = [-1 * x for x in reversed(valus)] + valus
+    if (AF == 'self_define'):
+        x_linspace = [-1 * x for x in reversed(x_linspace)] + x_linspace
+        valus = [-1 * x for x in reversed(valus)] + valus
         output = open(os.path.join('process_data',file_name+'.pkl'), 'wb')
         pickle.dump(x_linspace, output)
         pickle.dump(valus, output)
@@ -348,3 +341,9 @@ def implemet_AF(args):
             simulate(eps,rang,int_bits,float_bits,i_bits)
         if(args.Test_on_Datasets == True):
             test_on_datates(args)
+        if (args.MNIST_retrain == True):
+            MNIST_retrain(args)
+        elif (args.CIFAR_retrain == True):
+            CIFAR_retrain(args)
+        elif (args.IMGNET_retrain == True):
+            IMGNET_retrain(args)
