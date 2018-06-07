@@ -222,9 +222,9 @@ Then we replaced the AF of these models with the AF we implemented, validate the
       <td>97.71</td>
       <td>71.71</td>
       <td>0.242/0.882</td>
-      <td>39.138/63.8</td>
-      <td>39.138/63.8</td>
-      <td>39.138/63.8</td>
+      <td><font color=red>39.138/63.800</font></td>
+      <td>16.500/33.840</td>
+      <td>37.910/62.904</td>
    </tr>
    <tr>
       <td>SeLU_1_4_5</td>
@@ -232,8 +232,8 @@ Then we replaced the AF of these models with the AF we implemented, validate the
       <td>82.64</td>
       <td>0.284/0.916</td>
       <td>2.622/6.938</td>
-      <td>2.622/6.938</td>
-      <td>2.622/6.938</td>
+      <td><font color=red>46.312/70.560</font></td>
+      <td>40.466/65.316</td>
    </tr>
    <tr>
       <td>SeLU_1_4_6</td>
@@ -241,17 +241,17 @@ Then we replaced the AF of these models with the AF we implemented, validate the
       <td>86.1</td>
       <td>0.302/0.944</td>
       <td>0.608/2.218</td>
-      <td>0.608/2.218</td>
-      <td>0.608/2.218</td>
+      <td>30.226/53.308</td>
+      <td><font color=red>40.774/65.448</font></td>
    </tr>
    <tr>
       <td>SeLU_1_6_4</td>
       <td>97.68</td>
       <td>71.98</td>
       <td>0.242/0.878</td>
-      <td>39.256/64.208</td>
-      <td>39.256/64.208</td>
-      <td>39.256/64.208</td>
+      <td><font color=red>39.256/64.208</font></td>
+      <td>15.344/32.028</td>
+      <td>37.460/62.534</td>
    </tr>
    <tr>
       <td>SeLU_1_6_5</td>
@@ -259,8 +259,8 @@ Then we replaced the AF of these models with the AF we implemented, validate the
       <td>82.87</td>
       <td>0.284/0.87</td>
       <td>2.652/7.142</td>
-      <td>2.652/7.142</td>
-      <td>2.652/7.142</td>
+      <td><font color=red>46.074/70.466</font></td>
+      <td>40.098/65.070</td>
    </tr>
    <tr>
       <td>SeLU_1_6_6</td>
@@ -268,17 +268,17 @@ Then we replaced the AF of these models with the AF we implemented, validate the
       <td>85.51</td>
       <td>0.308/0.892</td>
       <td>0.858/2.6</td>
-      <td>0.858/2.6</td>
-      <td>0.858/2.6</td>
+      <td>35.492/59.952</td>
+      <td><font color=red>40.762/65.506</font></td>
    </tr>
    <tr>
       <td>SeLU_1_8_4</td>
       <td>97.66</td>
       <td>71.99</td>
       <td>0.250/0.878</td>
-      <td>39.628/64.62</td>
-      <td>39.628/64.62</td>
-      <td>39.628/64.62</td>
+      <td><font color=red>39.628/64.62</font></td>
+      <td>15.338/31.980</td>
+      <td>37.462/62.440</td>
    </tr>
    <tr>
       <td>SeLU_1_8_5</td>
@@ -286,8 +286,8 @@ Then we replaced the AF of these models with the AF we implemented, validate the
       <td>82.32</td>
       <td>0.296/0.9</td>
       <td>2.948/7.368</td>
-      <td>2.948/7.368</td>
-      <td>2.948/7.368</td>
+      <td><font color=red>46.290/70.534</font></td>
+      <td>39.984/65.036</td>
    </tr>
    <tr>
       <td>SeLU_1_8_6</td>
@@ -295,10 +295,12 @@ Then we replaced the AF of these models with the AF we implemented, validate the
       <td>85.11</td>
       <td>0.328/0.844</td>
       <td>0.846/2.644</td>
-      <td>0.846/2.644</td>
-      <td>0.846/2.644</td>
+      <td>36.922/61.404</td>
+      <td><font color=red>40.786/65.452</font></td>
    </tr>
 </table>
+The highest accuracy was noted by red.
+
 The AF name rule above is:
 
 AF\_(integer bit width of outputs)\_(decimal bit width of outputs)\_(input bit width)
@@ -354,12 +356,3 @@ Signal Processing Magazine, 2012.
 3. M. Luong, H. Pham, and C. D. Manning, “Effective approaches to
 attention-based neural machine translation,” CoRR, vol. abs/1508.04025,
 2015.
-4. G. Cybenko, “Approximation by superpositions of a sigmoidal function,”
-Approximation Theory & Its Applications, vol. 9, no. 3, pp. 17–28, 1993.
-5. C. W. Lin and J. S. Wang, “A digital circuit design of hyperbolic tangent
-sigmoid function for neural networks,” in IEEE International Symposium
-on Circuits and Systems, 2008, pp. 856–859.
-6. K. Basterretxea, J. M. Tarela, I. Del Campo, and G. Bosque, “An
-experimental study on nonlinear function computation for neural/fuzzy
-hardware design,” IEEE Transactions on Neural Networks, vol. 18, no. 1,
-pp. 266–83, 2007.
