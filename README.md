@@ -147,157 +147,60 @@ We trained a LeNet-5 on MNIST of  which  the AFs were all replaced with tanh/ReL
 
 Then we replaced the AF of these models with the AF we implemented, validate the models on the test set, and get the following accuracies, but we find that accuracy loss was huge nearly destroied the models ability  on Imagenet. This is due to error accumulatting, thus, we use some training tricks to increase it. We retraining the models with the AF we implemented, in this way, tanh get a enormous increase, but Selu still very low, then we add BNs (batch norm) in the models, in this way, we can reduce the accuracy loss.
 <table>
-   <tr>
-      <td>AF</td>
-      <td>MNIST</td>
-      <td>CIFAR</td>
-      <td>ImageNet</td>
-      <td colspan="3" align="center">ImageNet(retrain)</td>
-   </tr>
-   <tr>
-      <td>tanh_1_4_4</td>
-      <td>95.95</td>
-      <td>82.1</td>
-      <td>8.038/23.662</td>
-      <td colspan="3" align="center">35.160/59.608</td>
-   </tr>
-   <tr>
-      <td>tanh_1_4_5</td>
-      <td>96.02</td>
-      <td>58.47</td>
-      <td>7.668/22.882</td>
-      <td colspan="3" align="center">35.040/59.332</td>
-   </tr>
-   <tr>
-      <td>tanh_1_4_6</td>
-      <td>96.06</td>
-      <td>70.09</td>
-      <td>7.388/22.400</td>
-      <td colspan="3" align="center">34.792/59.096</td>
-   </tr>
-   <tr>
-      <td>tanh_1_6_4</td>
-      <td>96.1</td>
-      <td>85.21</td>
-      <td>6.882/21.330 </td>
-      <td colspan="3" align="center">34.562/59.196</td>
-   </tr>
-   <tr>
-      <td>tanh_1_6_5</td>
-      <td>96.17</td>
-      <td>86.64</td>
-      <td>6.562/20.432</td>
-      <td colspan="3" align="center">34.294/58.756</td>   
-   </tr>
-   <tr>
-      <td>tanh_1_6_6</td>
-      <td>96.19</td>
-      <td>86.88</td>
-      <td>6.296/19.96</td>
-      <td colspan="3" align="center">34.238/58.672</td>  
-   </tr>
-   <tr>
-      <td>tanh_1_8_4</td>
-      <td>96.13</td>
-      <td>84.92</td>
-      <td>6.712/20.792</td>
-      <td colspan="3" align="center">34.442/58.956</td>
-   </tr>
-   <tr>
-      <td>tanh_1_8_5</td>
-      <td>96.2</td>
-      <td>86.99</td>
-      <td>6.278/19.778</td>
-      <td colspan="3" align="center">34.300/58.658</td>
-   </tr>
-   <tr>
-      <td>tanh_1_8_6</td>
-      <td>96.23</td>
-      <td>87.15</td>
-      <td>5.940/19.128</td>
-      <td colspan="3" align="center">34.132/58.522</td>
-   </tr>
-   <tr>
-      <td>SeLU_1_4_4</td>
-      <td>97.71</td>
-      <td>71.71</td>
-      <td>0.242/0.882</td>
-      <td><font color=red>39.138/63.800</font></td>
-      <td>16.500/33.840</td>
-      <td>37.910/62.904</td>
-   </tr>
-   <tr>
-      <td>SeLU_1_4_5</td>
-      <td>97.69</td>
-      <td>82.64</td>
-      <td>0.284/0.916</td>
-      <td>2.622/6.938</td>
-      <td><font color=red>46.312/70.560</font></td>
-      <td>40.466/65.316</td>
-   </tr>
-   <tr>
-      <td>SeLU_1_4_6</td>
-      <td>97.65</td>
-      <td>86.1</td>
-      <td>0.302/0.944</td>
-      <td>0.608/2.218</td>
-      <td>30.226/53.308</td>
-      <td><font color=red>40.774/65.448</font></td>
-   </tr>
-   <tr>
-      <td>SeLU_1_6_4</td>
-      <td>97.68</td>
-      <td>71.98</td>
-      <td>0.242/0.878</td>
-      <td><font color=red>39.256/64.208</font></td>
-      <td>15.344/32.028</td>
-      <td>37.460/62.534</td>
-   </tr>
-   <tr>
-      <td>SeLU_1_6_5</td>
-      <td>97.68</td>
-      <td>82.87</td>
-      <td>0.284/0.87</td>
-      <td>2.652/7.142</td>
-      <td><font color=red>46.074/70.466</font></td>
-      <td>40.098/65.070</td>
-   </tr>
-   <tr>
-      <td>SeLU_1_6_6</td>
-      <td>97.65</td>
-      <td>85.51</td>
-      <td>0.308/0.892</td>
-      <td>0.858/2.6</td>
-      <td>35.492/59.952</td>
-      <td><font color=red>40.762/65.506</font></td>
-   </tr>
-   <tr>
-      <td>SeLU_1_8_4</td>
-      <td>97.66</td>
-      <td>71.99</td>
-      <td>0.250/0.878</td>
-      <td><font color=red>39.628/64.62</font></td>
-      <td>15.338/31.980</td>
-      <td>37.462/62.440</td>
-   </tr>
-   <tr>
-      <td>SeLU_1_8_5</td>
-      <td>97.66</td>
-      <td>82.32</td>
-      <td>0.296/0.9</td>
-      <td>2.948/7.368</td>
-      <td><font color=red>46.290/70.534</font></td>
-      <td>39.984/65.036</td>
-   </tr>
-   <tr>
-      <td>SeLU_1_8_6</td>
-      <td>97.67</td>
-      <td>85.11</td>
-      <td>0.328/0.844</td>
-      <td>0.846/2.644</td>
-      <td>36.922/61.404</td>
-      <td><font color=red>40.786/65.452</font></td>
-   </tr>
+ <tr>
+  <td></td>
+  <td>MNIST</td>
+  <td>CIFAR-10</td>
+  <td>ImageNet(top1/top5)</td>
+ </tr>
+ <tr>
+  <td>Tanh(Original)</td>
+  <td>96.15%</td>
+  <td>87.17%</td>
+  <td>42.39%/67.61%</td>
+ </tr>
+ <tr>
+  <td>Tanh_5_4</td>
+  <td>-0.2%</td>
+  <td>-5.07%</td>
+  <td>-8.16%/-8.94%</td>
+ </tr>
+ <tr>
+  <td>Tanh_7_4</td>
+  <td>-0.05%</td>
+  <td>-1.96%</td>
+  <td>7.83%/-8.42%</td>
+ </tr>
+ <tr>
+  <td>Tanh_7_6</td>
+  <td>+0.04%</td>
+  <td>-0.29%</td>
+  <td>-7:23%/-8:0%</td>
+ </tr>
+ <tr>
+  <td>SeLU(Original)</td>
+  <td>97.67%</td>
+  <td>86.79%</td>
+  <td>39.260%/63.342%</td>
+ </tr>
+ <tr>
+  <td>SeLU_5_4</td>
+  <td>+0.04%</td>
+  <td>-4.15%</td>
+  <td>-0.122%/+0.458%</td>
+ </tr>
+ <tr>
+  <td>SeLU_7_4</td>
+  <td>+0.01%</td>
+  <td>-4.47%</td>
+  <td>-0.004%/+0.866%</td>
+ </tr>
+ <tr>
+  <td>SeLU_8_5</td>
+  <td>+0.37%</td>
+  <td>-0.69%</td>
+  <td>+0.368%/+1.278%</td>
+ </tr>
 </table>
 The highest accuracy was noted by red.
 
