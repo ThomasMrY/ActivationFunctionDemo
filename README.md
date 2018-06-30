@@ -257,5 +257,4 @@ A. Senior, V. Vanhoucke, P. Nguyen, T. Sainath, and B. Kingsbury,
 “Deep neural networks for acoustic modeling in speech recognition,”
 Signal Processing Magazine, 2012.
 3. M. Luong, H. Pham, and C. D. Manning, “Effective approaches to
-attention-based neural machine translation,” CoRR, vol. abs/1508.04025,
-2015.
+attention-based neural machine translation,” CoRR, vol. abs/1508.04025,2015.
