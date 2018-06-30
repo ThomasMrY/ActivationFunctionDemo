@@ -169,13 +169,13 @@ Then we replaced the AF of these models with the AF we implemented, validate the
   <td>Tanh_7_4</td>
   <td>-0.05%</td>
   <td>-1.96%</td>
-  <td>7.83%/-8.42%</td>
+  <td>-7.83%/-8.42%</td>
  </tr>
  <tr>
   <td>Tanh_7_6</td>
   <td>+0.04%</td>
   <td>-0.29%</td>
-  <td>-7:23%/-8:0%</td>
+  <td>-7:23%/-8.0%</td>
  </tr>
  <tr>
   <td>SeLU(Original)</td>
