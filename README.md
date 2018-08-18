@@ -1,7 +1,7 @@
 # Activation Function Demo
 
 The "Activation Function Demo" is a demo for implementing activation function with the mathod, propsed in paper:[A](http://pytorch.org/), and evaluating the performance of it with different precision on diffierent datasets. And here is an example that we implemeted:
-![](https://bbojia.bn.files.1drv.com/y4mCLg2iVujqTxYebloAkMe-yBDgGTcfmBrotdGRWZnFfitbOnjpIe_zM5b3IJYdPaxrl9KWJAxiTCem2FOlkoE9JdpfeUOXro4gXIAC0R5Tbr9sWsHWjV2gswxNFj_Uect5wUF2FAk9yJ7kqRvhqkg7nbjC3XpO6o-MPY-I3wOja2C0DXedq1EhDZ3bCeXmQiIhqrIgl2yVJW_EMoQsCgMng/af.png?psid=1)
+![](https://b4q5za.bn.files.1drv.com/y4pnJitSeQvgjpkolOEBG9vgXay5RfmaXgX-x1KIpvKJCfcw6FduS8qGBxmERi84hV-gKZJrlVDqpcWZJM4kOEBe0u1DeFquVAbEbZwUdp6WYg0AViJmXWHrLfJC9fah2W5kSfXbFy3cB-GlKe8IYLN7ESZ6VNW5Hq7ptMguQ5_RnRSYhlzrvDmfsfNWG155HNVquQO0FdTDivVUWxP6bY3rQ/af.png?psid=1)
 
 Until now the activation function we supported:
 
@@ -96,9 +96,9 @@ Example: tanh\_1\_4\_4.v
 
 
 Here is an verilog file example:
-![](https://bbojia.bn.files.1drv.com/y4mRU5CS-7-kBB9xfljALBGy4s9oe6X5obp3EjI2NFqt9RKMtYUpFD6RhTWHMDg2MajJ57EAXmOdfj60QHNiTOxWiCB3DY9Ve-YVEgUjuhzzSWZm_PCh7YmB-T8PhkcO_lM_Hm8Nio9cSj_Ukyrxsm9qrm6WUCDDBOrots0lZj35nZPRbbg_PCK2WX5PThtVLb382eQ4eepcv1boPH5-dcc-g/verilog.png?psid=1)
+![](https://bbojia.bn.files.1drv.com/y4pzSwcrCtdT3u6TFyXDH0qiAnllLZoyCZnX1EkLgdG3nYngu3aMnJijj5-E6soOac0hpq292kubwVQJXNtCy1a5VDI97wwoxAFr9q-0rKt-VXynwJw5-mC22377BilkVjaghq1DqfYQKNRMPIXjq1ybBzjt8DAolpbegmJroVIPyJkyc2DwXyWZ2HgCpw8cZMoaegEyT2quvZIp0j-FKUdWw/verilog.png?psid=1)
 And also you will get three coe files at AF\_implementation\\coe_file\\tanh\_1\_6\_4:y.coe, b.coe, k.coe, Here is an examples of coe files:
-![](https://bbojia.bn.files.1drv.com/y4mDkmbSBtQIW6lV1BfCATs7BI5Hx0IqBZEsM9bSj7GuY6N8r0GlyGgmz1c53UUcxXBZBJGOyt33ErH9zLnS-UtsKhHN3365KdoXAnxcYw06taUEr_viOU0W5tvyEALYdanz2nQy9o5KCM3vPXpyeWeTZyHGVP0PNmyG03tsgwYplgSnyzd_ESVIM_h4pF-Tkz61vyR-njnqxaplr7W9Uyraw/coe.png?psid=1)
+![](https://bbojia.bn.files.1drv.com/y4pjK3Gb1pCE-GsPtzRFkVvzXRy2R9jiPcngPHRDtA3ARP9NXZAayV7beCQlAfxvDqmFLQHFX8XJtWNSiWCeHzlUaCm0-uWnkBfWhwBv9PTd-qA5LDCne1D15ycDU2E3sSjHLLSNf5NqFff1fiK0CKO4bSHXSsjlpw3BvQK8rcKmSLcPmubX9bWui2k6avAvqU3zg-2jcN1Qlpo_s6_HlWygg/coe.png?psid=1)
  
 ## Evaluation
 To evaluation the activation function we implement we gernerate a simulate version on activation function in pytorch to simulate the effect on the neural network. Before start we need to download the parameters we trained:
