@@ -1,6 +1,6 @@
 # Activation Function Demo
 
-The "Activation Function Demo" is a demo for implementing activation function with the mathod, propsed in paper:[A](http://pytorch.org/), and evaluating the performance of it with different precision on diffierent datasets. And here is an example that we implemeted:
+The "Activation Function Demo" is a demo for implementing activation function with the mathod, propsed in paper:[ "Design Space Exploration of Neural Network Activation Function Circuits,"](https://ieeexplore.ieee.org/document/8467987/), and evaluating the performance of it with different precision on diffierent datasets. And here is an example that we implemeted:
 ![](http://thyrsi.com/t6/359/1534598671x-1376440150.png)
 
 Until now the activation function we supported:
@@ -246,6 +246,21 @@ Retrained:
 * SeLU_6:<https://1drv.ms/u/s!AhWdKGJb0BiJe5KHi1bFRzFFWww>
 
 Where, SeLU_4,SeLU_5,SeLU_6 is the parameters file of retraining AlexNet with SeLU\_1\_4\_4, SeLU\_1\_4\_5,SeLU\_1\_4\_6.
+## Citation:
+If you find "Activation Function Demo" useful in your research, please consider citing:
+
+	@ARTICLE{8467987, 
+		author={T. Yang and Y. Wei and Z. Tu and H. Zeng and M. A. Kinsy and N. Zheng and P. Ren}, 
+		journal={IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems}, 
+		title={Design Space Exploration of Neural Network Activation Function Circuits}, 
+		year={2018}, 
+		volume={}, 
+		number={}, 
+		pages={1-1}, 
+		keywords={Table lookup;Hardware;Biological neural networks;Neurons;Approximation algorithms;Taylor series;Combinational circuits;Artificial Neural Networks;Activation Functions;Exponential Linear Units (ELU);Scaled Exponential Linear Units (SELU);Hyperbolic Tangent (tanh).}, 
+		doi={10.1109/TCAD.2018.2871198}, 
+		ISSN={0278-0070}, 
+	month={},}
 # Reference
 1. A. Krizhevsky, I. Sutskever, and G. E. Hinton, “ImageNet Classification
 with Deep Convolutional Neural Networks,” in Advances in Neural
