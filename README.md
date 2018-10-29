@@ -1,7 +1,7 @@
 # Activation Function Demo
 
 The "Activation Function Demo" is a demo for implementing activation function with the mathod, propsed in paper:[ "Design Space Exploration of Neural Network Activation Function Circuits,"](https://ieeexplore.ieee.org/document/8467987/), and evaluating the performance of it with different precision on diffierent datasets. And here is an example that we implemeted:
-![](http://thyrsi.com/t6/359/1534598671x-1376440150.png)
+![](http://thyrsi.com/t6/400/1540787607x-1404729680.png)
 
 Until now the activation function we supported:
 
@@ -96,9 +96,9 @@ Example: tanh\_1\_4\_4.v
 
 
 Here is an verilog file example:
-![](http://thyrsi.com/t6/359/1534598719x-1404775491.png)
+![](http://thyrsi.com/t6/400/1540787705x-1404792307.png)
 And also you will get three coe files at AF\_implementation\\coe_file\\tanh\_1\_6\_4:y.coe, b.coe, k.coe, Here is an examples of coe files:
-![](http://thyrsi.com/t6/359/1534598750x-1404775491.png)
+![](http://thyrsi.com/t6/400/1540787671x-1404792307.png)
  
 ## Evaluation
 To evaluation the activation function we implement we gernerate a simulate version on activation function in pytorch to simulate the effect on the neural network. Before start we need to download the parameters we trained:
